@@ -18,83 +18,204 @@
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/620/620833.png">
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
-        header { background: #fff; border-bottom: 2px solid #eec; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        nav { display: flex; justify-content: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: #d63384; font-weight: bold; }
-        .hero { background: #ffe3ec; padding: 60px 20px; text-align: center; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        h1 { color: #880e4f; }
-        h2 { color: #ad1457; border-bottom: 2px solid #fce4ec; padding-bottom: 5px; margin-top: 30px; }
-        .product-img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
-        footer { background: #333; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
-        .btn-external { display: inline-block; padding: 10px 20px; background: #d63384; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #880e4f;
+            --bg-light: #fff5f8;
+            --text-dark: #2d3436;
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-dark); 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fff;
+        }
+
+        header { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid #eee; 
+            padding: 1.2rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav { display: flex; justify-content: center; gap: 30px; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 500; 
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: var(--primary-color); }
+
+        .hero { 
+            background: linear-gradient(135deg, #ffe3ec 0%, #fff 100%);
+            padding: 100px 20px; 
+            text-align: center; 
+        }
+        
+        .hero h1 { 
+            font-size: 2.8rem; 
+            margin-bottom: 20px; 
+            color: var(--secondary-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+
+        section { margin-bottom: 60px; }
+
+        h2 { 
+            color: var(--secondary-color); 
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        h3 { color: var(--primary-color); margin-top: 30px; }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-img { 
+            width: 100%; 
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px; 
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.15);
+        }
+
+        .btn-external { 
+            display: inline-block; 
+            padding: 14px 28px; 
+            background: var(--primary-color); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        .btn-external:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+        }
+
+        footer { 
+            background: #2d3436; 
+            color: #dfe6e9; 
+            text-align: center; 
+            padding: 50px 20px; 
+            margin-top: 60px; 
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            nav { gap: 10px; flex-wrap: wrap; }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
             <a href="#domov">Domov</a>
-            <a href="#ponuka">Naša Ponuka</a>
+            <a href="#ponuka">Ponuka</a>
             <a href="#sluzby">Služby</a>
             <a href="#o-nas">O nás</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
     </header>
 
-    <div id="domov" class="hero">
-        <h1>Čerstvé kytice a donáška kvetov v Bratislave</h1>
-        <p>Prinášame radosť a vôňu do vašich domovov každý deň. Kvetinový Raj je vaše obľúbené kvetinárstvo s tradíciou.</p>
-    </div>
+    <main id="domov">
+        <div class="hero">
+            <h1>Čerstvé kytice a donáška kvetov v Bratislave</h1>
+            <p style="font-size: 1.2rem; color: #636e72;">Umenie viazania kvetov, ktoré rozpráva váš príbeh.</p>
+        </div>
 
-    <div class="container">
-        
-        <section id="ponuka">
-            <h2>Aktuálna ponuka kvetov</h2>
-            <p>V našej dennej ponuke nájdete čerstvé kytice viazané z tých najkrajších kvetov. Každá jedna kytica je originál, vytvorený s láskou našimi floristami. Ak hľadáte niečo špeciálne, radi vám pripravíme kyticu na mieru podľa vašich predstáv a obľúbených farieb.</p>
-            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" 
-                 alt="Miešaná farebná kytica čerstvých ruží a pivoniek" 
-                 class="product-img">
-            <p>Naše čerstvé kytice sú vhodné na narodeniny, meniny, výročia alebo len tak pre radosť. Stačí si vybrať z našej galérie alebo nás navštíviť priamo v predajni v Bratislave.</p>
-        </section>
-
-        <section id="sluzby">
-            <h2>Profesionálne kvetinové služby</h2>
-            <p>Kvetinový Raj nie je len o predaji kvetov. Ponúkame komplexné služby pre našich zákazníkov, aby bol váš zážitok z nákupu čo najlepší. Naša donáška kvetov v Bratislave je spoľahlivá a rýchla.</p>
+        <div class="container">
             
-            <h3>Donáška kvetov až k dverám</h3>
-            <p>Nemáte čas prísť k nám? Naša donáška kvetov doručí váš darček priamo do rúk obdarovanej osoby v rámci celej Bratislavy a blízkeho okolia. Kytica príde vždy čerstvá a v dohodnutom čase.</p>
-            
-            <h3>Svadobná floristika</h3>
-            <p>Plánujete svoj veľký deň? Naše kvetinárstvo vám zabezpečí kompletnú kvetinovú výzdobu, od svadobnej kytice až po aranžmány na stoly a výzdobu auta. Spoločne vytvoríme rozprávkovú atmosféru.</p>
-        </section>
+            <section id="ponuka">
+                <h2>Aktuálna ponuka kvetov</h2>
+                <div class="card">
+                    <p>V našej dennej ponuke nájdete čerstvé kytice viazané z tých najkrajších kvetov. Každá jedna kytica je originál, vytvorený s láskou našimi floristami. Ak hľadáte niečo špeciálne, radi vám pripravíme kyticu na mieru podľa vašich predstáv a obľúbených farieb.</p>
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Miešaná farebná kytica čerstvých ruží a pivoniek" 
+                         class="product-img">
+                    <p>Naše čerstvé kytice sú vhodné na narodeniny, meniny, výročia alebo len tak pre radosť. Stačí si vybrať z našej galérie alebo nás navštíviť priamo v predajni v Bratislave.</p>
+                </div>
+            </section>
 
-        <section id="o-nas">
-            <h2>Viac o kvetinárstve Kvetinový Raj</h2>
-            <p>Sme rodinné kvetinárstvo, ktoré vzniklo z hlbokej vášne pre prírodu a estetiku. Už viac ako desať rokov prinášame do Bratislavy tie najkrajšie čerstvé kytice. Zakladáme si na kvalite, preto kvety nakupujeme čerstvé každé ráno. Každý člen nášho tímu je vyškolený florista, ktorý rozumie reči kvetov.</p>
-            <p>Veríme, že kvety dokážu zlepšiť náladu a zmeniť atmosféru v každom priestore. Naším cieľom je, aby každý zákazník odchádzal z Kvetinového Raja s úsmevom na tvári.</p>
-        </section>
+            <section id="sluzby">
+                <h2>Profesionálne kvetinové služby</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="card">
+                        <h3>Donáška kvetov</h3>
+                        <p>Nemáte čas prísť k nám? Naša donáška kvetov doručí váš darček priamo do rúk obdarovanej osoby v rámci celej Bratislavy. Kytica príde vždy čerstvá a včas.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Svadobná floristika</h3>
+                        <p>Plánujete svoj veľký deň? Naše kvetinárstvo vám zabezpečí kompletnú kvetinovú výzdobu, od svadobnej kytice až po aranžmány na stoly.</p>
+                    </div>
+                </div>
+            </section>
 
-        <section id="kontakt">
-            <h2>Kontaktujte nás v Bratislave</h2>
-            <p>Máte otázky? Neváhajte nás kontaktovať alebo nás navštívte osobne. Sme tu pre vás každý pracovný deň aj počas víkendov.</p>
-            <p><strong>Adresa:</strong> Kvetná ulica 12, 821 08 Bratislava</p>
-            <p><strong>Telefón:</strong> +421 900 123 456</p>
-            <p><strong>Email:</strong> info@kvetinovyraj.sk</p>
-            
-            <p>Nájdete nás aj na sociálnych sieťach:</p>
-            <a href="https://www.facebook.com" class="btn-external" target="_blank" rel="noopener">Sledujte nás na Facebooku</a>
-        </section>
+            <section id="o-nas">
+                <h2>Viac o kvetinárstve Kvetinový Raj</h2>
+                <p>Sme rodinné kvetinárstvo, ktoré vzniklo z hlbokej vášne pre prírodu a estetiku. Už viac ako desať rokov prinášame do Bratislavy tie najkrajšie čerstvé kytice. Zakladáme si na kvalite, preto kvety nakupujeme čerstvé každé ráno priamo od overených pestovateľov.</p>
+                <p>Veríme, že kvety dokážu zlepšiť náladu a zmeniť atmosféru v každom priestore. Naším cieľom je, aby každý zákazník odchádzal z Kvetinového Raja spokojný a s kvetmi, ktoré vydržia dlho čerstvé.</p>
+            </section>
 
-    </div>
+            <section id="kontakt">
+                <h2>Kontaktujte nás</h2>
+                <div class="card" style="text-align: center;">
+                    <p>Máte otázky? Neváhajte nás kontaktovať alebo nás navštívte osobne.</p>
+                    <div style="margin: 20px 0;">
+                        <p><strong>📍 Adresa:</strong> Kvetná ulica 12, 821 08 Bratislava</p>
+                        <p><strong>📞 Telefón:</strong> +421 900 123 456</p>
+                        <p><strong>✉️ Email:</strong> info@kvetinovyraj.sk</p>
+                    </div>
+                    <a href="https://www.facebook.com" class="btn-external" target="_blank" rel="noopener">Sledujte nás na Facebooku</a>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Kvetinový Raj - Vaše kvetinárstvo pre čerstvé kytice v Bratislave. Všetky práva vyhradené.</p>
+        <p>&copy; 2026 Kvetinový Raj - Vaše kvetinárstvo pre čerstvé kytice v Bratislave.</p>
+        <p style="font-size: 0.8rem; color: #636e72; margin-top: 10px;">Vytvorené ako školský projekt pre predmet SEO.</p>
     </footer>
 
     <script>
-        console.log("Stránka Kvetinový Raj bola úspešne optimalizovaná.");
+        console.log("Vizuálne vylepšená stránka Kvetinový Raj je pripravená.");
     </script>
 
 </body>
