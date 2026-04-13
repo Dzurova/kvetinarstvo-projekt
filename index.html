@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kvetinový Raj - Čerstvé kytice a donáška kvetov v Bratislave</title>
     <meta name="description" content="Kvetinový Raj ponúka nádherné čerstvé kytice na každú príležitosť. Zabezpečujeme rýchlu donášku kvetov a profesionálne aranžovanie priamo v srdci Bratislavy.">
     
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kvetinový Raj - Čerstvé kytice a donáška kvetov v Bratislave">
+    <meta property="og:description" content="Kvetinový Raj ponúka nádherné čerstvé kytice na každú príležitosť. Zabezpečujeme rýchlu donášku kvetov a profesionálne aranžovanie.">
+    <meta property="og:url" content="https://dzurova.github.io/kvetinarstvo-projekt/">
+    <meta property="og:site_name" content="Kvetinový Raj">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800">
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/620/620833.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/620/620833.png">
+
     <style>
-        /* CSS vložené priamo v HTML súbore [cite: 7] */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
         header { background: #fff; border-bottom: 2px solid #eec; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
         nav { display: flex; justify-content: center; }
         nav a { margin: 0 15px; text-decoration: none; color: #d63384; font-weight: bold; }
         .hero { background: #ffe3ec; padding: 60px 20px; text-align: center; }
         .container { max-width: 900px; margin: auto; padding: 20px; }
-        h1 { color: #880e4f; } /* Práve jeden nadpis h1  */
-        h2 { color: #ad1457; border-bottom: 2px solid #fce4ec; padding-bottom: 5px; }
-        .services, .about { margin-bottom: 40px; }
-        .product-img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #880e4f; }
+        h2 { color: #ad1457; border-bottom: 2px solid #fce4ec; padding-bottom: 5px; margin-top: 30px; }
+        .product-img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
         footer { background: #333; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
+        .btn-external { display: inline-block; padding: 10px 20px; background: #d63384; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -26,6 +36,7 @@
     <header>
         <nav>
             <a href="#domov">Domov</a>
+            <a href="#ponuka">Naša Ponuka</a>
             <a href="#sluzby">Služby</a>
             <a href="#o-nas">O nás</a>
             <a href="#kontakt">Kontakt</a>
@@ -34,44 +45,56 @@
 
     <div id="domov" class="hero">
         <h1>Čerstvé kytice a donáška kvetov v Bratislave</h1>
-        <p>Prinášame radosť a vôňu do vašich domovov každý deň.</p>
+        <p>Prinášame radosť a vôňu do vašich domovov každý deň. Kvetinový Raj je vaše obľúbené kvetinárstvo s tradíciou.</p>
     </div>
 
     <div class="container">
         
-        <section id="sluzby" class="services">
-            <h2>Naše kvetinové služby</h2>
-            <p>V našom kvetinárstve Kvetinový Raj sa špecializujeme na viazanie originálnych kytíc. Či už hľadáte darček k narodeninám, svadobnú kyticu alebo decentný aranžmán, sme tu pre vás. [cite: 13, 34]</p>
-            
-            <h3>Sezónne kytice</h3>
-            <p>Každý mesiac pripravujeme špeciálnu ponuku z aktuálne kvitnúcich kvetov od lokálnych dodávateľov.</p>
-            
+        <section id="ponuka">
+            <h2>Aktuálna ponuka kvetov</h2>
+            <p>V našej dennej ponuke nájdete čerstvé kytice viazané z tých najkrajších kvetov. Každá jedna kytica je originál, vytvorený s láskou našimi floristami. Ak hľadáte niečo špeciálne, radi vám pripravíme kyticu na mieru podľa vašich predstáv a obľúbených farieb.</p>
             <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80" 
                  alt="Miešaná farebná kytica čerstvých ruží a pivoniek" 
                  class="product-img">
+            <p>Naše čerstvé kytice sú vhodné na narodeniny, meniny, výročia alebo len tak pre radosť. Stačí si vybrať z našej galérie alebo nás navštíviť priamo v predajni v Bratislave.</p>
         </section>
 
-        <section id="o-nas" class="about">
-            <h2>O kvetinárstve Kvetinový Raj</h2>
-            <p>Sme rodinné kvetinárstvo s tradíciou od roku 2010. Naša vášeň pre kvety sa odráža v každom detaile našej práce. Veríme, že čerstvé kytice sú najlepším spôsobom, ako vyjadriť emócie bez slov. </p>
+        <section id="sluzby">
+            <h2>Profesionálne kvetinové služby</h2>
+            <p>Kvetinový Raj nie je len o predaji kvetov. Ponúkame komplexné služby pre našich zákazníkov, aby bol váš zážitok z nákupu čo najlepší. Naša donáška kvetov v Bratislave je spoľahlivá a rýchla.</p>
+            
+            <h3>Donáška kvetov až k dverám</h3>
+            <p>Nemáte čas prísť k nám? Naša donáška kvetov doručí váš darček priamo do rúk obdarovanej osoby v rámci celej Bratislavy a blízkeho okolia. Kytica príde vždy čerstvá a v dohodnutom čase.</p>
+            
+            <h3>Svadobná floristika</h3>
+            <p>Plánujete svoj veľký deň? Naše kvetinárstvo vám zabezpečí kompletnú kvetinovú výzdobu, od svadobnej kytice až po aranžmány na stoly a výzdobu auta. Spoločne vytvoríme rozprávkovú atmosféru.</p>
+        </section>
+
+        <section id="o-nas">
+            <h2>Viac o kvetinárstve Kvetinový Raj</h2>
+            <p>Sme rodinné kvetinárstvo, ktoré vzniklo z hlbokej vášne pre prírodu a estetiku. Už viac ako desať rokov prinášame do Bratislavy tie najkrajšie čerstvé kytice. Zakladáme si na kvalite, preto kvety nakupujeme čerstvé každé ráno. Každý člen nášho tímu je vyškolený florista, ktorý rozumie reči kvetov.</p>
+            <p>Veríme, že kvety dokážu zlepšiť náladu a zmeniť atmosféru v každom priestore. Naším cieľom je, aby každý zákazník odchádzal z Kvetinového Raja s úsmevom na tvári.</p>
         </section>
 
         <section id="kontakt">
-            <h2>Kontaktujte nás</h2>
+            <h2>Kontaktujte nás v Bratislave</h2>
+            <p>Máte otázky? Neváhajte nás kontaktovať alebo nás navštívte osobne. Sme tu pre vás každý pracovný deň aj počas víkendov.</p>
             <p><strong>Adresa:</strong> Kvetná ulica 12, 821 08 Bratislava</p>
             <p><strong>Telefón:</strong> +421 900 123 456</p>
             <p><strong>Email:</strong> info@kvetinovyraj.sk</p>
+            
+            <p>Nájdete nás aj na sociálnych sieťach:</p>
+            <a href="https://www.facebook.com" class="btn-external" target="_blank" rel="noopener">Sledujte nás na Facebooku</a>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Kvetinový Raj - Všetky práva vyhradené. [cite: 43]</p>
+        <p>&copy; 2026 Kvetinový Raj - Vaše kvetinárstvo pre čerstvé kytice v Bratislave. Všetky práva vyhradené.</p>
     </footer>
 
     <script>
-        // JavaScript vložený priamo v HTML [cite: 7]
-        console.log("Stránka Kvetinový Raj bola úspešne načítaná.");
+        console.log("Stránka Kvetinový Raj bola úspešne optimalizovaná.");
     </script>
 
 </body>
